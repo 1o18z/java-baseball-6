@@ -1,15 +1,16 @@
 package baseball;
 
-import baseball.game.Game;
-import baseball.message.Printer;
+import baseball.view.OutputView;
 
 public class Application {
 
+    private static final Controller controller = new Controller();
+
     public static void main(String[] args) {
         while (true) {
-            Printer.start();
+            OutputView.printStart();
 
-            if (!Game.play()) {
+            if (!controller.play()) {
                 break;
             }
         }
